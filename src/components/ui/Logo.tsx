@@ -1,8 +1,18 @@
+import { Link as ScrollLink } from 'react-scroll'
+
 export const Logo = () => {
   return (
-    <div className='flex items-center gap-2'>
-      <span className='rounded-full bg-black text-white p-1 w-9 h-9 flex items-center justify-center font-bold'>ys</span>
+    <ScrollLink
+      to='inicio'
+      smooth={true}
+      duration={500}
+      offset={-80}
+      className='flex cursor-pointer items-center gap-2'
+    >
+      <span className='flex h-7 w-7 items-center justify-center rounded-full bg-black p-1 font-bold text-white'>
+        ys
+      </span>
       <span className='font-bold'>yessblack.dev</span>
-    </div>
+    </ScrollLink>
   )
 }
