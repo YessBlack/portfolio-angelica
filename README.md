@@ -1,75 +1,75 @@
-# React + TypeScript + Vite
+# Portafolio Angelica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio personal como Desarrolladora de Software Fullstack. Este sitio web showcase presenta mis proyectos, habilidades y experiencia profesional en el desarrollo de software.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** - Biblioteca JavaScript para construir interfaces de usuario
+- **TypeScript** - Superset tipado de JavaScript para mayor seguridad en el código
+- **Vite** - Herramienta de build rápida y moderna
+- **TailwindCSS 4** - Framework CSS para estilos utility-first
+- **Lucide React** - Biblioteca de iconos modernos y consistentes
 
-## React Compiler
+## 📦 Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Clonar el repositorio
+git clone <repository-url>
+cd portfolio-angelica
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+# Instalar dependencias
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Scripts Disponibles
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Iniciar servidor de desarrollo
+pnpm dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Construir para producción
+pnpm build
+
+# Previsualizar build de producción
+pnpm preview
+
+# Ejecutar linter
+pnpm lint
+```
+
+## 📁 Estructura del Proyecto
 
 ```
+portfolio-angelica/
+├── public/          # Archivos estáticos
+├── src/
+│   ├── assets/      # Imágenes y recursos
+│   ├── App.tsx      # Componente principal
+│   ├── main.tsx     # Punto de entrada
+│   └── index.css    # Estilos globales
+├── index.html       # Template HTML
+└── package.json     # Dependencias y scripts
+```
+
+## ✨ Características
+
+- Diseño responsive y moderno
+- Optimizado para rendimiento
+- Tipado estático con TypeScript
+- Estilos utility-first con TailwindCSS
+- Build optimizado con Vite
+
+## 👩‍💻 Sobre Mí
+
+Soy Desarrolladora de Software Fullstack con experiencia en la creación de aplicaciones web escalables y modernas. Me especializo en el desarrollo de soluciones completas, desde el frontend hasta el backend.
+
+## 📬 Contacto
+
+- **Email**: [anyegar36@gmail.com](mailto:anyegar36@gmail.com)
+- **LinkedIn**: [Angelica García](https://www.linkedin.com/in/angelica-yessenia-garcia-osorio/)
+- **GitHub**: [@YessBlack](https://github.com/YessBlack)
+- **Portfolio**: [tu-sitio-web]
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT.
