@@ -70,6 +70,10 @@ Soy Desarrolladora de Software Fullstack con experiencia en la creación de apli
 - **GitHub**: [@YessBlack](https://github.com/YessBlack)
 - **Portfolio**: [tu-sitio-web]
 
+## 🖥️ Figma
+
+- **Diseño en Figma**: [Diseño en Figma](https://www.figma.com/design/qBOqn6V8nHJE0lb0qkmxfU/Portfolio?node-id=1-2&t=eJI9JWeGibu4ugl3-1)
+
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT.

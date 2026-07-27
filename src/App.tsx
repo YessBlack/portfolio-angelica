@@ -1,9 +1,18 @@
+import { Route, Routes } from 'react-router-dom'
+import { HomePage } from './pages/HomePage'
+import { AppLayout } from './layouts/AppLayout'
+import { BlogPage } from './pages/BlogPage'
+
 function App() {
   return (
-    <>
-      <h1 className='bg-red-300'>Hola</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, animi esse? Qui veritatis delectus voluptate dicta earum, quod consectetur velit repellat porro aperiam quibusdam aliquid vel modi quisquam repellendus numquam?</p>
-    </>
+    <Routes>
+      <Route element={<AppLayout />}>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/blog' element={<BlogPage />} />
+        <Route path='/blog/:slug' element={<div>Blog:id</div>} />
+        <Route path='*' element={<div>Not Found</div>} />
+      </Route>
+    </Routes>
   )
 }
 
