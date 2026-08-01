@@ -1,3 +1,5 @@
+import i18n from '@/i18n'
+
 export const floatingIcons = [
   { id: 'ts', icon: '/src/assets/icons/typeScript.svg', alt: 'TypeScript', position: 'left-10 -top-4', delay: 0 },
   { id: 'java', icon: '/src/assets/icons/java.svg', alt: 'Java', position: 'right-20 top-2', delay: 0.4 },
@@ -13,7 +15,7 @@ export const roleBadges = [
 ]
 
 export const stats = [
-  { value: '+3', label: 'Años de experiencia' },
-  { value: '+3', label: 'Proyectos desarrollados' },
-  { value: '+15', label: 'Funcionalidades entregadas' }
+  { value: '+3', label: i18n.t('Años de experiencia') },
+  { value: '+3', label: i18n.t('Proyectos desarrollados') },
+  { value: '+15', label: i18n.t('Funcionalidades entregadas') }
 ]
