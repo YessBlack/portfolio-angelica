@@ -9,7 +9,7 @@ export const Experience = () => {
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-10'>
         <div className='mx-auto max-w-2xl text-center flex flex-col gap-10'>
           <h2 className='font-bold text-3xl text-violet-500'>{t('Experiencia Profesional')}</h2>
-          <p className='leading-relaxed'>{t('Más de 3 años desarrollando soluciones web robustas, escalables y enfocadas en ofrecer experiencias digitales de calidad.')}</p>
+          <p className='leading-relaxed'>{t('Más de 3 años en el desarrollo web, pasando por distintos roles y responsabilidades. Cada proyecto sumó algo distinto: mejores prácticas, arquitectura escalable y un claro objetivo por la calidad.')}</p>
         </div>
         <ExperienceTimeline />
       </div>

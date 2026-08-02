@@ -10,7 +10,7 @@ export const LanguageSwitcher = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const LANGUAGES = [
-    { code: 'es', label: t('Español'), flagClass: 'fi fi-es' },
+    { code: 'es', label: t('Español'), flagClass: 'fi fi-co' },
     { code: 'en', label: t('Inglés'), flagClass: 'fi fi-us' }
   ]
 
