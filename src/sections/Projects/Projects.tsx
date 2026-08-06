@@ -26,7 +26,7 @@ export const Projects = () => {
     },
     {
       title: t('Kadosh - Sistema de Inventario y POS'),
-      description: t('Sistema de punto de venta e inventario en desarrollo, con control de stock en tiempo real, registro de ventas y reportes. Proyecto actualmente en construcción.'),
+      description: t('Sistema de punto de venta e inventario en desarrollo, con control de stock en tiempo real, registro de ventas y reportes.'),
       image: 'src/assets/img/inventario-pos.png',
       category: 'En desarrollo',
       tags: ['React', 'Node.js', 'PostgreSQL'],

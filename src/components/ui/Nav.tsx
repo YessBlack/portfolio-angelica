@@ -73,7 +73,7 @@ export const Nav = () => {
       </nav>
 
       <div className='hidden md:flex items-center gap-5'>
-        <SocialNetwork />
+        <SocialNetwork withoutBg />
         <LanguageSwitcher />
       </div>
 

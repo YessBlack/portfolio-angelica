@@ -135,7 +135,7 @@ export const ExperienceTimeline = () => {
                     : 'col-start-2 justify-self-start md:col-start-3 md:col-end-4 md:justify-self-start'
                 }
               >
-                <TimelineCard item={item} />
+                <TimelineCard item={item} index={index} />
               </div>
             </li>
           )
