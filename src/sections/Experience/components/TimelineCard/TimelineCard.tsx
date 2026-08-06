@@ -4,10 +4,33 @@ import { motion } from 'framer-motion'
 
 interface TimelineCard {
   item: TimelineItem;
+  index: number;
 }
 
-export const TimelineCard = ({ item }: TimelineCard) => {
+const PALETTES = [
+  {
+    tint: 'bg-violet-100/50 dark:bg-violet-500/5',
+    border: 'border-violet-200 border-l-6 dark:border-violet-500/20 dark:bg-violet-500/5',
+    company: 'text-violet-600 dark:text-violet-400',
+    hoverTitle: 'group-hover:text-violet-700 dark:group-hover:text-violet-300'
+  },
+  {
+    tint: 'border-fuchsia-200 bg-fuchsia-100/50 border-l-6 dark:border-fuchsia-500/20 dark:bg-fuchsia-500/5',
+    border: 'border-fuchsia-200 dark:border-fuchsia-500/20',
+    company: 'text-fuchsia-600 dark:text-fuchsia-400',
+    hoverTitle: 'group-hover:text-fuchsia-700 dark:group-hover:text-fuchsia-300'
+  },
+  {
+    tint: 'border-indigo-200 bg-indigo-100/50 border-l-6 dark:border-indigo-500/20 dark:bg-indigo-500/5',
+    border: 'border-indigo-200 dark:border-indigo-500/20',
+    company: 'text-indigo-600 dark:text-indigo-400',
+    hoverTitle: 'group-hover:text-indigo-700 dark:group-hover:text-indigo-300'
+  }
+]
+
+export const TimelineCard = ({ item, index }: TimelineCard) => {
   const { t } = useTranslation()
+  const palette = PALETTES[index % PALETTES.length]
 
   return (
     <motion.div
@@ -16,15 +39,16 @@ export const TimelineCard = ({ item }: TimelineCard) => {
       viewport={{ once: false, amount: 0.4 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ scale: 1.02, y: -4 }}
-      className='md:-translate-y-12 group w-full min-w-0 max-w-sm rounded-2xl border border-violet-100 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5'
+      className={`group border-l-7 w-full min-w-0 max-w-sm overflow-hidden rounded-2xl border ${palette.border} ${palette.tint} shadow-sm md:-translate-y-12 dark:bg-white/5`}
     >
-      <span className='mb-1 block font-mono text-xs text-slate-500 dark:text-slate-400'>{t(item.date)}</span>
-      <h3 className='mb-0.5 text-lg font-semibold text-slate-900 transition-colors duration-200 group-hover:text-violet-700 dark:text-[#E5E7EB] dark:group-hover:text-violet-300'>
-        {t(item.role)}
-      </h3>
-      <p className='mb-3 text-sm italic text-violet-600 dark:text-violet-400'>{t(item.company)}</p>
-      <p className='text-sm leading-relaxed text-slate-600 dark:text-slate-300'>{t(item.desc)}</p>
+      <div className='p-5'>
+        <span className='mb-1 block font-mono text-xs text-slate-500 dark:text-slate-400'>{t(item.date)}</span>
+        <h3 className={`mb-0.5 text-lg font-semibold text-slate-900 transition-colors duration-200 ${palette.hoverTitle} dark:text-[#E5E7EB]`}>
+          {t(item.role)}
+        </h3>
+        <p className={`mb-3 text-sm italic ${palette.company}`}>{t(item.company)}</p>
+        <p className='text-sm leading-relaxed text-slate-600 dark:text-slate-300'>{t(item.desc)}</p>
+      </div>
     </motion.div>
-
   )
 }
