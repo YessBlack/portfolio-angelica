@@ -18,7 +18,7 @@ interface ProjectCardProps {
   project: ProjectItem
 }
 
-const TAG_COLORS: BadgeColor[] = ['violet', 'indigo', 'orange']
+const TAG_COLORS: BadgeColor[] = ['violet', 'indigo', 'orange', 'emerald']
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { t } = useTranslation()

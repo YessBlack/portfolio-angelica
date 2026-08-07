@@ -3,11 +3,17 @@ import { EXTERNAL_LINKS } from '@/data/links'
 import { Download, FolderOpen } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
 import { motion } from 'framer-motion'
-import { floatingIcons, roleBadges, stats } from '@/sections/Hero/constants'
+import { floatingIcons, roleBadges } from '@/sections/Hero/constants'
 import { useTranslation } from 'react-i18next'
 
 export const Hero = () => {
   const { t } = useTranslation()
+
+  const stats = [
+    { value: '+3', label: t('Años de experiencia') },
+    { value: '+3', label: t('Proyectos desarrollados') },
+    { value: '+15', label: t('Funcionalidades entregadas') }
+  ]
 
   return (
     <section id='inicio' className='col-span-full rounded-lg py-25 dark:bg-red-900/40'>

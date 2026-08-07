@@ -20,7 +20,7 @@ export const Projects = () => {
       description: t('Clon funcional de YouTube construido para practicar consumo de APIs externas, reproducción de video y manejo de listas de resultados con paginación.'),
       image: 'src/assets/img/youtube-clone.png',
       category: t('Clon / Práctica'),
-      tags: ['React', 'JavaScript', 'YouTube API'],
+      tags: ['HTML', 'CSS', 'JavaScript'],
       githubUrl: 'https://github.com/YessBlack/Clon-de-YouTube',
       liveUrl: 'https://https-github-com-yess-black-curso-ed-team-clon-de-you-tube.vercel.app/'
     },
@@ -29,26 +29,24 @@ export const Projects = () => {
       description: t('Sistema de punto de venta e inventario en desarrollo, con control de stock en tiempo real, registro de ventas y reportes.'),
       image: 'src/assets/img/inventario-pos.png',
       category: 'En desarrollo',
-      tags: ['React', 'Node.js', 'PostgreSQL'],
+      tags: ['React', 'Shadcn', 'SQLite', 'TypeScript', 'Node.js'],
       githubUrl: 'https://github.com/YessBlack/kadosh'
     },
     {
       title: 'Reserve One',
       description: t('Sistema de reserva de clases para el Club Deportivo Lan Hua, escuela de artes marciales chinas en Medellín especializada en Kung Fu tradicional (Mizong Luohan) y Wushu competitivo. Frontend en HTML, CSS y JavaScript, con backend en Java y Spring Boot.'),
       image: 'src/assets/img/reserve-one.png',
-      category: t('Sistema de Reservas'),
-      tags: ['JavaScript', 'Java', 'Spring Boot'],
-      githubUrl: 'https://github.com/YessBlack/DEV001-social-network',
-      liveUrl: 'https://dev-001-social-network.vercel.app'
+      category: 'En desarrollo',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
+      githubUrl: 'https://github.com/YessBlack/reserve-one-5'
     },
     {
       title: 'Kairos App',
       description: t('MVP de gestión de tareas con landing page, autenticación de usuarios, dashboard personal y configuración de perfil. Permite crear, organizar y eliminar tareas para llevar un seguimiento claro del día a día. Frontend en HTML, CSS y JavaScript, con backend en Java y Spring Boot.'),
       image: 'src/assets/img/inventario-pos.png',
-      category: 'To-Do App',
-      tags: ['JavaScript', 'Java', 'Spring Boot'],
-      githubUrl: 'https://github.com/YessBlack/kairos',
-      liveUrl: 'https://kairos-app.vercel.app'
+      category: 'En desarrollo',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
+      githubUrl: 'https://github.com/YessBlack/Kairos-Planner'
     }
   ]
 
