@@ -1,4 +1,8 @@
 import { ProjectCard, type ProjectItem } from '@/sections/Projects/components/ProjectCard'
+import friticosColombiaImage from '@/assets/img/friticos-colombia.png'
+import youtubeCloneImage from '@/assets/img/youtube-clone.png'
+import inventarioPosImage from '@/assets/img/inventario-pos.png'
+import reserveOneImage from '@/assets/img/reserve-one.png'
 import { useTranslation } from 'react-i18next'
 
 export const Projects = () => {
@@ -8,7 +12,7 @@ export const Projects = () => {
     {
       title: 'Friticos Colombia',
       description: t('Landing page desarrollada en 8 horas durante una hackathon, enfocada en conversión rápida y presentación de un negocio de comida típica colombiana.'),
-      image: 'src/assets/img/friticos-colombia.png',
+      image: friticosColombiaImage,
       category: t('Hackathon'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
       githubUrl: 'https://github.com/YessBlack/Hackaton1_FriticosColombia',
@@ -18,7 +22,7 @@ export const Projects = () => {
     {
       title: 'YouTube Clone',
       description: t('Clon funcional de YouTube construido para practicar consumo de APIs externas, reproducción de video y manejo de listas de resultados con paginación.'),
-      image: 'src/assets/img/youtube-clone.png',
+      image: youtubeCloneImage,
       category: t('Clon / Práctica'),
       tags: ['HTML', 'CSS', 'JavaScript'],
       githubUrl: 'https://github.com/YessBlack/Clon-de-YouTube',
@@ -27,24 +31,24 @@ export const Projects = () => {
     {
       title: t('Kadosh - Sistema de Inventario y POS'),
       description: t('Sistema de punto de venta e inventario en desarrollo, con control de stock en tiempo real, registro de ventas y reportes.'),
-      image: 'src/assets/img/inventario-pos.png',
-      category: 'En desarrollo',
+      image: inventarioPosImage,
+      category: t('En desarrollo'),
       tags: ['React', 'Shadcn', 'SQLite', 'TypeScript', 'Node.js'],
       githubUrl: 'https://github.com/YessBlack/kadosh'
     },
     {
       title: 'Reserve One',
       description: t('Sistema de reserva de clases para el Club Deportivo Lan Hua, escuela de artes marciales chinas en Medellín especializada en Kung Fu tradicional (Mizong Luohan) y Wushu competitivo. Frontend en HTML, CSS y JavaScript, con backend en Java y Spring Boot.'),
-      image: 'src/assets/img/reserve-one.png',
-      category: 'En desarrollo',
+      image: reserveOneImage,
+      category: t('En desarrollo'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
       githubUrl: 'https://github.com/YessBlack/reserve-one-5'
     },
     {
       title: 'Kairos App',
       description: t('MVP de gestión de tareas con landing page, autenticación de usuarios, dashboard personal y configuración de perfil. Permite crear, organizar y eliminar tareas para llevar un seguimiento claro del día a día. Frontend en HTML, CSS y JavaScript, con backend en Java y Spring Boot.'),
-      image: 'src/assets/img/inventario-pos.png',
-      category: 'En desarrollo',
+      image: inventarioPosImage,
+      category: t('En desarrollo'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
       githubUrl: 'https://github.com/YessBlack/Kairos-Planner'
     }
