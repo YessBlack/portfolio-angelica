@@ -52,7 +52,13 @@ export const Contact = () => {
         />
       </div>
 
-      <div className='relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <motion.div
+        className='relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div className='grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16'>
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -100,7 +106,13 @@ export const Contact = () => {
 
           <ContactForm />
         </div>
-        <div className='mt-20 grid grid-cols-1 gap-8 sm:grid-cols-3'>
+        <motion.div
+          className='mt-20 grid grid-cols-1 gap-8 sm:grid-cols-3'
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.15 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+        >
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
@@ -121,9 +133,9 @@ export const Contact = () => {
               <p className='text-sm leading-relaxed text-slate-600 dark:text-slate-300'>{step.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -1,14 +1,25 @@
 import { Button } from '@/components/ui/Button'
-import profileImage from '@/assets/img/profile.png'
+import profileImage from '@/assets/img/hero.svg'
 import { EXTERNAL_LINKS } from '@/data/links'
 import { Download, FolderOpen } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
 import { motion } from 'framer-motion'
-import { floatingIcons, roleBadges } from '@/sections/Hero/constants'
+import { floatingIcons } from '@/sections/Hero/constants'
 import { useTranslation } from 'react-i18next'
 
 export const Hero = () => {
   const { t } = useTranslation()
+
+  const orbitIcons = [...floatingIcons, ...floatingIcons].slice(0, 8)
+
+  const getOrbitPosition = (index: number, total: number, radius: number) => {
+    const angle = (Math.PI * 2 * index) / total - Math.PI / 2
+
+    return {
+      left: `calc(50% + ${Math.cos(angle) * radius}px)`,
+      top: `calc(50% + ${Math.sin(angle) * radius}px)`
+    }
+  }
 
   const stats = [
     { value: '+3', label: t('Años de experiencia') },
@@ -18,7 +29,13 @@ export const Hero = () => {
 
   return (
     <section id='inicio' className='col-span-full rounded-lg py-25 dark:bg-red-900/40'>
-      <div className='flex flex-col items-center gap-5 lg:flex-row justify-between'>
+      <motion.div
+        className='flex flex-col items-center gap-5 lg:flex-row justify-between'
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         {/** Columna 1 Información */}
         <div className='flex flex-col gap-5'>
           <div className='flex items-center gap-3'>
@@ -52,34 +69,35 @@ export const Hero = () => {
 
         {/** Columna 2 Image */}
         <div className='hidden relative h-120 w-100 items-center justify-center lg:flex'>
+          <div className='absolute inset-12 rounded-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15)_0%,rgba(59,130,246,0.12)_38%,rgba(255,255,255,0)_72%)] blur-2xl' />
 
-          {floatingIcons.map((item) => (
-            <motion.div
-              key={item.id}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: item.delay }}
-              className={`absolute z-40 flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-md ${item.position}`}
-            >
-              <img src={item.icon} alt={item.alt} className='h-6 w-6' />
-            </motion.div>
-          ))}
-
-          {roleBadges.map((badge) => (
-            <div
-              key={badge.id}
-              className={`absolute z-40 border border-violet-200 rounded-2xl bg-violet-100 px-5 py-2 dark:bg-violet-900/30 ${badge.position}`}
-            >
-              <span className='text-sm font-medium text-slate-800 dark:text-slate-200'>
-                {badge.label}
-              </span>
-            </div>
-          ))}
+          <div className='absolute inset-0 z-40 -translate-x-10'>
+            {orbitIcons.map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className='absolute h-15 w-15 -translate-x-1/2 -translate-y-1/2'
+                style={getOrbitPosition(index, orbitIcons.length, 232)}
+              >
+                <motion.div
+                  className='relative flex h-full w-full items-center justify-center rounded-full border border-white/70 bg-white/15 shadow-[0_0_18px_rgba(168,85,247,0.18),0_0_28px_rgba(59,130,246,0.14)] backdrop-blur-md'
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: index * 0.14 }}
+                >
+                  <img
+                    src={item.icon}
+                    alt={item.alt}
+                    className='relative z-10 h-6 w-6 drop-shadow-[0_0_8px_rgba(255,255,255,0.35)]'
+                  />
+                </motion.div>
+              </div>
+            ))}
+          </div>
 
           <motion.div
             className='absolute top-1/2 z-0 h-170 w-170 -translate-x-1/2 -translate-y-1/2'
             style={{
               left: '40%',
-              background: 'radial-gradient(circle at center, rgba(139,92,246,0.65) 0%, rgba(139,92,246,0.3) 40%, rgba(255,255,255,0) 70%)'
+              background: 'radial-gradient(circle at center, rgba(139,92,246,0.52) 0%, rgba(139,92,246,0.22) 40%, rgba(255,255,255,0) 73%)'
             }}
             animate={{
               borderRadius: [
@@ -87,10 +105,10 @@ export const Hero = () => {
                 '45% 55% 40% 60% / 60% 40% 60% 40%',
                 '68% 32% 65% 35% / 43% 45% 55% 57%'
               ],
-              scale: [1, 0.94, 1]
+              scale: [1, 0.96, 1]
             }}
             transition={{
-              duration: 6,
+              duration: 5.6,
               repeat: Infinity,
               ease: 'easeInOut'
             }}
@@ -98,13 +116,9 @@ export const Hero = () => {
 
           <div className='absolute inset-0 z-10 rounded-3xl bg-violet-50/80' />
 
-          <div className='absolute inset-0 z-20 flex items-center justify-center'>
-            <div className='h-100 w-80 -rotate-5 rounded-3xl bg-violet-100' />
-          </div>
-
           <div className='absolute inset-0 z-30 flex items-center justify-center'>
             <img
-              className='w-60 object-cover'
+              className='w-80 object-cover'
               style={{
                 maskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)',
                 WebkitMaskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)'
@@ -114,7 +128,7 @@ export const Hero = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className='mt-5 flex gap-8 border-t border-slate-200 pt-6 dark:border-slate-800 lg:w-md'>
         {stats.map((stat) => (
