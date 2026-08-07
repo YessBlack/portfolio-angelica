@@ -13,18 +13,6 @@ const PALETTES = [
     border: 'border-violet-200 border-l-6 dark:border-violet-500/20 dark:bg-violet-500/5',
     company: 'text-violet-600 dark:text-violet-400',
     hoverTitle: 'group-hover:text-violet-700 dark:group-hover:text-violet-300'
-  },
-  {
-    tint: 'border-fuchsia-200 bg-fuchsia-100/50 border-l-6 dark:border-fuchsia-500/20 dark:bg-fuchsia-500/5',
-    border: 'border-fuchsia-200 dark:border-fuchsia-500/20',
-    company: 'text-fuchsia-600 dark:text-fuchsia-400',
-    hoverTitle: 'group-hover:text-fuchsia-700 dark:group-hover:text-fuchsia-300'
-  },
-  {
-    tint: 'border-indigo-200 bg-indigo-100/50 border-l-6 dark:border-indigo-500/20 dark:bg-indigo-500/5',
-    border: 'border-indigo-200 dark:border-indigo-500/20',
-    company: 'text-indigo-600 dark:text-indigo-400',
-    hoverTitle: 'group-hover:text-indigo-700 dark:group-hover:text-indigo-300'
   }
 ]
 

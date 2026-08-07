@@ -20,17 +20,17 @@ export const Contact = () => {
       icon: Zap,
       title: t('Conversamos'),
       desc: t('Coordinamos una llamada corta para conocernos y ver si encajo con lo que buscan.'),
-      card: 'border-fuchsia-200 bg-fuchsia-100/50 border-l-6 dark:border-fuchsia-500/20 dark:bg-fuchsia-500/5',
-      iconBg: 'bg-fuchsia-300/70 text-fuchsia-600 dark:bg-fuchsia-500/10 dark:text-fuchsia-400',
-      number: 'text-fuchsia-500 dark:text-fuchsia-400'
+      card: 'border-violet-200 bg-violet-100/50 border-l-6 dark:border-violet-500/20 dark:bg-violet-500/5',
+      iconBg: 'bg-violet-300/70 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400',
+      number: 'text-violet-500 dark:text-violet-400'
     },
     {
       icon: Send,
       title: t('Siguientes pasos'),
       desc: t('Te comparto mi CV, portafolio y disponibilidad para avanzar en el proceso.'),
-      card: 'border-indigo-200 bg-indigo-100/50 border-l-6 dark:border-indigo-500/20 dark:bg-indigo-500/5',
-      iconBg: 'bg-indigo-300/70 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400',
-      number: 'text-indigo-500 dark:text-indigo-400'
+      card: 'border-violet-200 bg-violet-100/50 border-l-6 dark:border-violet-500/20 dark:bg-violet-500/5',
+      iconBg: 'bg-violet-300/70 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400',
+      number: 'text-violet-500 dark:text-violet-400'
     }
   ]
 
@@ -47,7 +47,7 @@ export const Contact = () => {
       <motion.div
         animate={{ y: [0, -20, 0], x: [0, -16, 0] }}
         transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
-        className='pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-indigo-300/30 blur-3xl dark:bg-indigo-700/20'
+        className='pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-fuchsia-300/30 blur-3xl dark:bg-fuchsia-700/20'
       />
 
       <div className='relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -60,7 +60,7 @@ export const Contact = () => {
             className='flex flex-col gap-8'
           >
             <div className='flex flex-col gap-4'>
-              <Badge label={t('Disponible para nuevas oportunidades')} color='emerald' pulse />
+              <Badge label={t('Disponible para nuevas oportunidades')} color='violet' pulse />
 
               <h2 className='text-3xl font-bold text-slate-900 dark:text-[#E5E7EB] sm:text-4xl'>
                 {t('Hablemos')}
