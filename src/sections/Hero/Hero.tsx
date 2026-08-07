@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/Button'
+import profileImage from '@/assets/img/profile.png'
 import { EXTERNAL_LINKS } from '@/data/links'
 import { Download, FolderOpen } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
@@ -108,7 +109,7 @@ export const Hero = () => {
                 maskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)',
                 WebkitMaskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)'
               }}
-              src='src/assets/img/profile.png'
+              src={profileImage}
               alt='Profile'
             />
           </div>
