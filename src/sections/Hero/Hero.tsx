@@ -3,9 +3,18 @@ import { EXTERNAL_LINKS } from '@/data/links'
 import { Download, FolderOpen } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
 import { motion } from 'framer-motion'
-import { floatingIcons, roleBadges, stats } from '@/sections/Hero/constants'
+import { floatingIcons, roleBadges } from '@/sections/Hero/constants'
+import { useTranslation } from 'react-i18next'
 
 export const Hero = () => {
+  const { t } = useTranslation()
+
+  const stats = [
+    { value: '+3', label: t('Años de experiencia') },
+    { value: '+3', label: t('Proyectos desarrollados') },
+    { value: '+15', label: t('Funcionalidades entregadas') }
+  ]
+
   return (
     <section id='inicio' className='col-span-full rounded-lg py-25 dark:bg-red-900/40'>
       <div className='flex flex-col items-center gap-5 lg:flex-row justify-between'>
@@ -13,26 +22,26 @@ export const Hero = () => {
         <div className='flex flex-col gap-5'>
           <div className='flex items-center gap-3'>
             <p className='w-20 h-px bg-slate-700'></p>
-            <p>COLOMBIA</p>
+            <p>{t('COLOMBIA')}</p>
           </div>
 
           <div className='w-full lg:max-w-lg'>
             <h1 className='text-4xl align-baseline leading-tight font-bold sm:text-4xl lg:text-5xl'>
-              Soy <span className='text-violet-500 italic'>Angelica García</span>,<br />
-              Desarrolladora de Software
+              {t('Soy')} <span className='text-violet-500 italic'>Angelica García</span>,<br />
+              {t('Desarrolladora de Software')}
             </h1>
           </div>
 
           <p className='w-full lg:max-w-xl'>
-            Ingeniera de Sistemas con enfasis en desarrollado de software con más de 3 años de experiencia creando aplicaciones web. Especializada en JavaScript, TypeScript y React, con experiencia en Node.js, Firebase, migraciones tecnológicas y desarrollo de productos digitales escalables.            </p>
-
+            {t('Ingeniera de Sistemas con enfasis en desarrollado de software con más de 3 años de experiencia creando aplicaciones web. Especializada en JavaScript, TypeScript y React, con experiencia en Node.js, Firebase, migraciones tecnológicas y desarrollo de productos digitales escalables.')}
+          </p>
           <div className='flex gap-3'>
             <ScrollLink to='proyectos' smooth={true} duration={500} offset={-80}>
-              <Button label='Ver Proyectos' variant='primary' icon={<FolderOpen size={16} />} />
+              <Button label={t('Ver Proyectos')} variant='primary' icon={<FolderOpen size={16} />} />
             </ScrollLink>
 
             <Button
-              label='Descargar CV'
+              label={t('Descargar CV')}
               variant='secondary'
               icon={<Download size={16} />}
               onClick={() => window.open(EXTERNAL_LINKS.cv, '_blank')}
@@ -110,10 +119,10 @@ export const Hero = () => {
         {stats.map((stat) => (
           <div key={stat.label}>
             <p className='text-2xl font-bold text-violet-500 dark:text-violet-400'>{stat.value}</p>
-            <p className='text-sm text-slate-500 dark:text-slate-400'>{stat.label}</p>
+            <p className='text-sm text-slate-500 dark:text-slate-400'>{t(stat.label)}</p>
           </div>
         ))}
       </div>
-    </section>
+    </section >
   )
 }

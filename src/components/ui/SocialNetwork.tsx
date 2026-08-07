@@ -1,24 +1,51 @@
 import { GithubIcon } from '@/assets/icons/GitHubIcon'
 import { LinkedinIcon } from '@/assets/icons/LinkedInIcon'
+import { AtSign } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-export const SocialNetwork = () => {
+interface SocialNetworkProps {
+  withoutBg?: boolean
+}
+
+export const SocialNetwork = ({ withoutBg = false }: SocialNetworkProps) => {
+  const SOCIAL_LINKS = [
+    {
+      icon: LinkedinIcon,
+      href: 'https://www.linkedin.com/in/angelica-yessenia-garcia-osorio/',
+      label: 'LinkedIn',
+      style: `text-violet-700 ${!withoutBg && 'bg-violet-100border border-violet-200 shadow-sm'} dark:bg-violet-500/10 dark:text-violet-300 dark:border-violet-500/20`
+    },
+    {
+      icon: GithubIcon,
+      href: 'https://github.com/YessBlack',
+      label: 'GitHub',
+      style: `text-fuchsia-700 ${!withoutBg && 'bg-fuchsia-100 border border-fuchsia-200 shadow-sm'} dark:bg-fuchsia-500/10 dark:text-fuchsia-300 dark:border-fuchsia-500/20`
+    },
+    {
+      icon: AtSign,
+      href: 'mailto:angelica.garcia@email.com',
+      label: 'Email',
+      style: `text-indigo-700 ${!withoutBg && 'bg-indigo-100 border-indigo-200 shadow-sm'} dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20`
+    }
+  ]
+
   return (
-    <div className='flex gap-2'>
-      <a href='https://github.com/YessBlack'
-        target='_blank'
-        rel='noopener noreferrer'
-        className='text-slate-700 transition-colors hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400'
-      >
-        <GithubIcon size={18} />
-      </a>
-      <a
-        href='https://linkedin.com/in/tu-usuario'
-        target='_blank'
-        rel='noopener noreferrer'
-        className='text-slate-700 transition-colors hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400'
-      >
-        <LinkedinIcon size={18} />
-      </a>
-    </div >
+    <div className='flex items-center gap-1'>
+      {SOCIAL_LINKS.map(({ icon: Icon, href, label, style }) => (
+        <motion.a
+          key={label}
+          href={href}
+          target='_blank'
+          rel='noreferrer'
+          aria-label={label}
+          whileHover={{ y: -2 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          className={`flex h-9 w-9 items-center justify-center rounded-full ${style}`}
+        >
+          <Icon size={16} />
+        </motion.a>
+      ))}
+    </div>
+
   )
 }

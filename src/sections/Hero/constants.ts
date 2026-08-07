@@ -11,9 +11,3 @@ export const roleBadges = [
   { id: 'frontend', label: 'Frontend Developer', position: '-left-25 bottom-45' },
   { id: 'software', label: 'Software Developer', position: 'bottom-5 left-1/2 -translate-x-1/2' }
 ]
-
-export const stats = [
-  { value: '+3', label: 'Años de experiencia' },
-  { value: '+3', label: 'Proyectos desarrollados' },
-  { value: '+15', label: 'Funcionalidades entregadas' }
-]

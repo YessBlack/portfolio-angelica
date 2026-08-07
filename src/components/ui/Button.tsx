@@ -31,11 +31,11 @@ export const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${variantStyles[variant]} ${className}`}
+      className={`flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${variantStyles[variant]} ${className}`}
       {...props}
     >
-      {icon}
       {label}
+      {icon}
     </button>
   )
 }
