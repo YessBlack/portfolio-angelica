@@ -3,6 +3,7 @@ import friticosColombiaImage from '@/assets/img/friticos-colombia.png'
 import youtubeCloneImage from '@/assets/img/youtube-clone.png'
 import inventarioPosImage from '@/assets/img/inventario-pos.png'
 import reserveOneImage from '@/assets/img/reserve-one.png'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
 export const Projects = () => {
@@ -21,7 +22,7 @@ export const Projects = () => {
     },
     {
       title: 'YouTube Clone',
-      description: t('Clon funcional de YouTube construido para practicar consumo de APIs externas, reproducción de video y manejo de listas de resultados con paginación.'),
+      description: t('Recreación de la interfaz de YouTube enfocada en frontend, donde trabajé la estructura visual de la plataforma, la organización del diseño y la creación de una interfaz moderna y responsive.'),
       image: youtubeCloneImage,
       category: t('Clon / Práctica'),
       tags: ['HTML', 'CSS', 'JavaScript'],
@@ -55,20 +56,35 @@ export const Projects = () => {
   ]
 
   return (
-    <section id='proyectos' className='col-span-full rounded-lg py-15 text-center flex flex-col gap-10 dark:bg-red-900/40'>
-      <div className='mx-auto max-w-2xl text-center flex flex-col gap-10'>
+    <section
+      id='proyectos'
+      className='col-span-full rounded-lg py-15 text-center flex flex-col gap-10 dark:bg-red-900/40'
+    >
+      <motion.div
+        className='mx-auto max-w-2xl text-center flex flex-col gap-10'
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         <h2 className='font-bold text-3xl text-violet-500'>{t('Proyectos')}</h2>
         <p className='leading-relaxed'>{t('Proyectos que reflejan cómo pienso y construyo: desde hackathons resueltas contrarreloj hasta sistemas completos en desarrollo. En todos, la prioridad es la misma — código sólido y una experiencia que se sienta simple para quien la usa.')}</p>
-      </div>
+      </motion.div>
 
-      <div className='grid grid-cols-1 gap-6 mt-3 sm:grid-cols-2 lg:grid-cols-3'>
+      <motion.div
+        className='grid grid-cols-1 gap-6 mt-3 sm:grid-cols-2 lg:grid-cols-3'
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+      >
         {projects.map(project => (
           <ProjectCard
             key={project.title}
             project={project}
           />
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
