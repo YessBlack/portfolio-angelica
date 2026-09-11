@@ -80,7 +80,7 @@ export const Contact = () => {
 
             <div className='flex flex-col gap-4'>
               <motion.a
-                href='malito:anyegar36@gmail.com'
+                href='malito:yessblackdev@gmail.com'
                 whileHover={{ x: 4 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 target='_blank'
@@ -90,7 +90,7 @@ export const Contact = () => {
                   <Mail size={18} />
                 </span>
                 <span className='text-slate-800 transition-colors duration-200 group-hover:text-violet-700 dark:text-slate-200 dark:group-hover:text-violet-300'>
-                  anyegar36@gmail.com
+                  yessblackdev@gmail.com
                 </span>
               </motion.a>
 
