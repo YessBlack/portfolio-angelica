@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/Button'
-import profileImage from '@/assets/img/hero1.png'
+import profileImage from '@/assets/img/hero1-fast.png'
 import { EXTERNAL_LINKS } from '@/data/links'
 import { Download, FolderOpen } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
@@ -11,6 +11,7 @@ import { useState } from 'react'
 export const Hero = () => {
   const { t } = useTranslation()
   const [isProfileImageLoaded, setIsProfileImageLoaded] = useState(false)
+  const [hasProfileImageError, setHasProfileImageError] = useState(false)
 
   const orbitIcons = [...floatingIcons, ...floatingIcons].slice(0, 8)
 
@@ -126,6 +127,11 @@ export const Hero = () => {
                 className='absolute h-100 w-80 animate-pulse rounded-[45%] bg-violet-200/70 blur-sm dark:bg-violet-900/50'
               />
             )}
+            {hasProfileImageError && (
+              <div className='absolute z-10 flex h-80 w-80 items-center justify-center rounded-[45%] bg-violet-200/70 px-8 text-center font-mono text-xs text-violet-700 dark:bg-violet-900/50 dark:text-violet-200'>
+                {t('La ilustración no pudo cargarse')}
+              </div>
+            )}
             <img
               className={`w-80 object-cover transition-opacity duration-500 ${isProfileImageLoaded ? 'opacity-100' : 'opacity-0'}`}
               style={{
@@ -134,7 +140,11 @@ export const Hero = () => {
               }}
               src={profileImage}
               alt='Profile'
+              loading='eager'
+              fetchPriority='high'
+              decoding='async'
               onLoad={() => setIsProfileImageLoaded(true)}
+              onError={() => setHasProfileImageError(true)}
             />
           </div>
         </div>
