@@ -1,14 +1,16 @@
 import { Button } from '@/components/ui/Button'
-import profileImage from '@/assets/img/hero.svg'
+import profileImage from '@/assets/img/hero1.png'
 import { EXTERNAL_LINKS } from '@/data/links'
 import { Download, FolderOpen } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
 import { motion } from 'framer-motion'
 import { floatingIcons } from '@/sections/Hero/constants'
 import { useTranslation } from 'react-i18next'
+import { useState } from 'react'
 
 export const Hero = () => {
   const { t } = useTranslation()
+  const [isProfileImageLoaded, setIsProfileImageLoaded] = useState(false)
 
   const orbitIcons = [...floatingIcons, ...floatingIcons].slice(0, 8)
 
@@ -115,16 +117,24 @@ export const Hero = () => {
           />
 
           <div className='absolute inset-0 z-10 rounded-3xl bg-violet-50/80' />
+          <div className='absolute inset-10 z-20 rotate-3 rounded-3xl bg-violet-200/55 dark:bg-violet-900/35' />
 
           <div className='absolute inset-0 z-30 flex items-center justify-center'>
+            {!isProfileImageLoaded && (
+              <div
+                aria-hidden='true'
+                className='absolute h-100 w-80 animate-pulse rounded-[45%] bg-violet-200/70 blur-sm dark:bg-violet-900/50'
+              />
+            )}
             <img
-              className='w-80 object-cover'
+              className={`w-80 object-cover transition-opacity duration-500 ${isProfileImageLoaded ? 'opacity-100' : 'opacity-0'}`}
               style={{
                 maskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)',
                 WebkitMaskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)'
               }}
               src={profileImage}
               alt='Profile'
+              onLoad={() => setIsProfileImageLoaded(true)}
             />
           </div>
         </div>

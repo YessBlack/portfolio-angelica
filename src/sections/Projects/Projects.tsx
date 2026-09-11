@@ -2,6 +2,7 @@ import { ProjectCard, type ProjectItem } from '@/sections/Projects/components/Pr
 import friticosColombiaImage from '@/assets/img/friticos-colombia.png'
 import youtubeCloneImage from '@/assets/img/youtube-clone.png'
 import inventarioPosImage from '@/assets/img/inventario-pos.png'
+import kairos from '@/assets/img/kairos.png'
 import reserveOneImage from '@/assets/img/reserve-one.png'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
@@ -12,17 +13,17 @@ export const Projects = () => {
   const projects: ProjectItem[] = [
     {
       title: 'Friticos Colombia',
-      description: t('Landing page desarrollada en 8 horas durante una hackathon, enfocada en conversión rápida y presentación de un negocio de comida típica colombiana.'),
+      description: t('Landing page desarrollada en 8 horas durante hackathon, enfocada en conversión rápida para negocio de comida típica colombiana.'),
       image: friticosColombiaImage,
       category: t('Hackathon'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
       githubUrl: 'https://github.com/YessBlack/Hackaton1_FriticosColombia',
-      liveUrl: 'https://yessblack.github.io/Hackaton1_FriticosColombia/',
+      liveUrl: 'https://hackaton1-friticos-colombia.vercel.app/',
       featured: true
     },
     {
       title: 'YouTube Clone',
-      description: t('Recreación de la interfaz de YouTube enfocada en frontend, donde trabajé la estructura visual de la plataforma, la organización del diseño y la creación de una interfaz moderna y responsive.'),
+      description: t('Recreación de la interfaz de YouTube enfocada en frontend, trabajando la estructura visual, organización del diseño y una interfaz moderna y responsive.'),
       image: youtubeCloneImage,
       category: t('Clon / Práctica'),
       tags: ['HTML', 'CSS', 'JavaScript'],
@@ -39,7 +40,7 @@ export const Projects = () => {
     },
     {
       title: 'Reserve One',
-      description: t('Sistema de reserva de clases para el Club Deportivo Lan Hua, escuela de artes marciales chinas en Medellín especializada en Kung Fu tradicional (Mizong Luohan) y Wushu competitivo. Frontend en HTML, CSS y JavaScript, con backend en Java y Spring Boot.'),
+      description: t('Sistema de reservas para Club Lan Hua, escuela de artes marciales chinas en Medellín, cubriendo gestión de horarios, clases y usuarios.'),
       image: reserveOneImage,
       category: t('En desarrollo'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
@@ -47,8 +48,8 @@ export const Projects = () => {
     },
     {
       title: 'Kairos App',
-      description: t('MVP de gestión de tareas con landing page, autenticación de usuarios, dashboard personal y configuración de perfil. Permite crear, organizar y eliminar tareas para llevar un seguimiento claro del día a día. Frontend en HTML, CSS y JavaScript, con backend en Java y Spring Boot.'),
-      image: inventarioPosImage,
+      description: t('MVP de gestión de tareas con landing page, autenticación, dashboard y perfil de usuario, permitiendo crear, organizar y eliminar tareas.'),
+      image: kairos,
       category: t('En desarrollo'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
       githubUrl: 'https://github.com/YessBlack/Kairos-Planner'

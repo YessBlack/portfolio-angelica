@@ -1,54 +1,17 @@
-import { EYEBROW_TEXT, items } from '@/sections/Experience/components/constants'
+import { useExperience } from '@/sections/Experience/components/useExperience'
 import { TimelineCard } from '@/sections/Experience/components/TimelineCard/TimelineCard'
-import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 export const ExperienceTimeline = () => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const spineFillRef = useRef<HTMLDivElement>(null)
-  const rowRefs = useRef<(HTMLLIElement | null)[]>([])
-
-  const [typedLength, setTypedLength] = useState(0)
-
-  useEffect(() => {
-    if (typedLength >= EYEBROW_TEXT.length) return
-    const timeout = setTimeout(() => setTypedLength((l) => l + 1), 35)
-    return () => clearTimeout(timeout)
-  }, [typedLength])
-
-  useEffect(() => {
-    const updateSpine = () => {
-      const container = containerRef.current
-      const fill = spineFillRef.current
-      if (!container || !fill) return
-
-      const rect = container.getBoundingClientRect()
-      const viewportH = window.innerHeight
-
-      const start = viewportH * 0.85
-      const total = rect.height + viewportH * 0.7
-      const progressed = start - rect.top
-
-      const pct = Math.max(0, Math.min(100, (progressed / total) * 100))
-      fill.style.height = `${pct}%`
-    }
-
-    let ticking = false
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          updateSpine()
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-
-    window.addEventListener('scroll', onScroll)
-    updateSpine()
-
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const {
+    containerRef,
+    spineFillRef,
+    rowRefs,
+    typedLength,
+    setTypedLength,
+    EYEBROW_TEXT,
+    items
+  } = useExperience()
 
   return (
     <div ref={containerRef} className='relative m-auto'>
