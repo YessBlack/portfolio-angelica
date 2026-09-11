@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import { Gem } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import profileImage from '@/assets/img/profile.png'
+import profileImage from '@/assets/img/profile-optimized.jpg'
 
 export const About = () => {
   const { t } = useTranslation()
@@ -8,11 +9,21 @@ export const About = () => {
   return (
     <section
       id='sobre-mi'
-      className='col-span-full rounded-lg py-15 dark:bg-red-900/40'
+      className='scroll-mt-24 col-span-full rounded-lg py-15 dark:bg-red-900/40'
     >
+      <div
+        aria-hidden='true'
+        className='flex w-full items-center mb-7 gap-5 px-5 pb-12 sm:gap-7 sm:px-10 lg:px-12'
+      >
+        <span className='h-px min-w-12 flex-1 bg-violet-300 dark:bg-violet-600' />
+        <Gem
+          className='h-6 w-6 shrink-0 text-violet-500 dark:text-violet-400' strokeWidth={1.8}
+        />
+        <span className='h-px min-w-12 flex-1 bg-violet-300 dark:bg-violet-600' />
+      </div>
       <motion.div
         className='mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8'
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.15 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -24,6 +35,8 @@ export const About = () => {
               <img
                 src={profileImage}
                 alt={t('Retrato de Angelica García')}
+                loading='lazy'
+                decoding='async'
                 className='h-full w-full object-cover object-center saturate-90 transition duration-700 hover:scale-105 hover:saturate-110'
               />
               <div className='pointer-events-none absolute inset-0 bg-linear-to-tr from-violet-950/35 via-transparent to-white/20' />
@@ -42,10 +55,10 @@ export const About = () => {
           </div>
           <h2 className='text-3xl font-bold text-slate-900 dark:text-slate-100 sm:text-4xl'>{t('Sobre mí')}</h2>
           <p className='max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300'>
-            {t('Mi acercamiento a la tecnología no fue amor a primera vista: en el colegio llegué a odiar la clase de informática, hasta que un cambio de profesor me hizo ver la lógica detrás de las herramientas y ahí nació mi interés. Entré a Análisis y Desarrollo de Sistemas en el SENA sin saber programar, y terminé enamorándome de los algoritmos al descubrir el impacto real que la tecnología tiene en la vida de las personas —desde oportunidades laborales hasta reconectar con seres queridos. Eso me llevó a estudiar Ingeniería de Sistemas y luego a especializarme en frontend en el bootcamp de Laboratoria, donde aprendí a trabajar en equipo de verdad junto a personas de Perú, Argentina, Chile y México.')}
+            {t('Mi acercamiento a la tecnología no fue amor a primera vista. En el colegio incluso llegué a odiar la clase de informática, hasta que un cambio de clase despertó mi curiosidad por entender cómo funcionaba el software. Todo empezó a tener sentido: lo encontraba fácil, lógico y, cuando mi profesor me dijo que era buena en ello, algo hizo clic. Decidí estudiar Análisis y Desarrollo de Sistemas en el SENA sin saber programar y terminé enamorándome de los algoritmos.')}
           </p>
           <p className='max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300'>
-            {t('Esa base me abrió las puertas a mi primera experiencia profesional, donde participé en la migración de una plataforma SaaS de JavaScript puro a React. Tras casi tres años de aprendizaje intenso, tomé una pausa para recargar energía, y con el deseo de seguir creciendo, tuve la oportunidad de ingresar al bootcamp fullstack de Generation, donde hoy profundizo en backend para consolidar mi perfil fullstack. Lo que más disfruto del desarrollo es resolver problemas, darle estructura y sentido a un problema, y sobre todo saber que esa solución termina siendo útil para alguien más.')}
+            {t('Desde entonces, ese interés me llevó a estudiar Ingeniería de Sistemas y a especializarme en frontend en Laboratoria, donde no solo aprendí a desarrollar software, sino también a trabajar y crecer junto a personas extraordinarias. Pero había algo más que alimentaba mi interés: ver cómo la tecnología podía conectar personas, abrir oportunidades y transformar vidas. Esa mezcla de curiosidad e impacto me motivó a seguir aprendiendo y a explorar nuevas formas de contribuir al mundo digital.')}
           </p>
         </div>
       </motion.div>

@@ -65,10 +65,10 @@ Soy Desarrolladora de Software Fullstack con experiencia en la creación de apli
 
 ## 📬 Contacto
 
-- **Email**: [anyegar36@gmail.com](mailto:anyegar36@gmail.com)
+- **Email**: [yessblackdev@gmail.com](mailto:yessblackdev@gmail.com)
 - **LinkedIn**: [Angelica García](https://www.linkedin.com/in/angelica-yessenia-garcia-osorio/)
 - **GitHub**: [@YessBlack](https://github.com/YessBlack)
-- **Portfolio**: [tu-sitio-web]
+- **Portfolio**: [yessblack.dev](https://www.yessblack.dev/)
 
 ## 🖥️ Figma
 

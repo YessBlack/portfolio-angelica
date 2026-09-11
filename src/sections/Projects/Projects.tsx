@@ -1,9 +1,9 @@
 import { ProjectCard, type ProjectItem } from '@/sections/Projects/components/ProjectCard'
-import friticosColombiaImage from '@/assets/img/friticos-colombia.png'
-import youtubeCloneImage from '@/assets/img/youtube-clone.png'
-import inventarioPosImage from '@/assets/img/inventario-pos.png'
-import kairos from '@/assets/img/kairos.png'
-import reserveOneImage from '@/assets/img/reserve-one.png'
+import friticosColombiaImage from '@/assets/img/friticos-colombia-optimized.jpg'
+import youtubeCloneImage from '@/assets/img/youtube-clone-optimized.jpg'
+import inventarioPosImage from '@/assets/img/inventario-pos-optimized.jpg'
+import kairos from '@/assets/img/kairos-optimized.jpg'
+import reserveOneImage from '@/assets/img/reserve-one-optimized.jpg'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
@@ -23,7 +23,7 @@ export const Projects = () => {
     },
     {
       title: 'YouTube Clone',
-      description: t('Recreación de la interfaz de YouTube enfocada en frontend, trabajando la estructura visual, organización del diseño y una interfaz moderna y responsive.'),
+      description: t('Recreación de la interfaz de YouTube enfocada en frontend, trabajando la estructura visual, organización y una interfaz responsiva.'),
       image: youtubeCloneImage,
       category: t('Clon / Práctica'),
       tags: ['HTML', 'CSS', 'JavaScript'],
@@ -31,8 +31,8 @@ export const Projects = () => {
       liveUrl: 'https://https-github-com-yess-black-curso-ed-team-clon-de-you-tube.vercel.app/'
     },
     {
-      title: t('Kadosh - Sistema de Inventario y POS'),
-      description: t('Sistema de punto de venta e inventario en desarrollo, con control de stock en tiempo real, registro de ventas y reportes.'),
+      title: t('Sistema de Inventario y POS'),
+      description: t('Kadosh es un sistema de punto de venta e inventario en desarrollo, con control de stock en tiempo real, registro de ventas y reportes.'),
       image: inventarioPosImage,
       category: t('En desarrollo'),
       tags: ['React', 'Shadcn', 'SQLite', 'TypeScript', 'Node.js'],
