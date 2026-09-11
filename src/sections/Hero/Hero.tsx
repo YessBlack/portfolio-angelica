@@ -117,6 +117,7 @@ export const Hero = () => {
           />
 
           <div className='absolute inset-0 z-10 rounded-3xl bg-violet-50/80' />
+          <div className='absolute inset-10 z-20 rotate-3 rounded-3xl bg-violet-200/55 dark:bg-violet-900/35' />
 
           <div className='absolute inset-0 z-30 flex items-center justify-center'>
             {!isProfileImageLoaded && (
