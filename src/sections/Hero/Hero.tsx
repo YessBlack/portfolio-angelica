@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/Button'
-import profileImage from '@/assets/img/hero1-fast.png'
 import { EXTERNAL_LINKS } from '@/data/links'
 import { Download, FolderOpen } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
@@ -10,7 +9,7 @@ import { useState } from 'react'
 
 export const Hero = () => {
   const { t } = useTranslation()
-  const [isProfileImageLoaded, setIsProfileImageLoaded] = useState(false)
+
   const [hasProfileImageError, setHasProfileImageError] = useState(false)
 
   const orbitIcons = [...floatingIcons, ...floatingIcons].slice(0, 8)
@@ -34,7 +33,7 @@ export const Hero = () => {
     <section id='inicio' className='col-span-full rounded-lg py-25 dark:bg-red-900/40'>
       <motion.div
         className='flex flex-col items-center gap-5 lg:flex-row justify-between'
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.15 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -54,7 +53,7 @@ export const Hero = () => {
           </div>
 
           <p className='w-full lg:max-w-xl'>
-            {t('Ingeniera de Sistemas con enfasis en desarrollado de software con más de 3 años de experiencia creando aplicaciones web. Especializada en JavaScript, TypeScript y React, con experiencia en Node.js, Firebase, migraciones tecnológicas y desarrollo de productos digitales escalables.')}
+            {t('Soy Ingeniera de Sistemas y desarrolladora de software con experiencia construyendo aplicaciones web con JavaScript, TypeScript, React y Node.js. Me apasiona crear productos digitales escalables y actualmente estoy profundizando en backend, APIs y Spring Boot para consolidarme como desarrolladora fullstack.')}
           </p>
           <div className='flex gap-3'>
             <ScrollLink to='proyectos' smooth={true} duration={500} offset={-80}>
@@ -121,29 +120,24 @@ export const Hero = () => {
           <div className='absolute inset-10 z-20 rotate-3 rounded-3xl bg-violet-200/55 dark:bg-violet-900/35' />
 
           <div className='absolute inset-0 z-30 flex items-center justify-center'>
-            {!isProfileImageLoaded && (
-              <div
-                aria-hidden='true'
-                className='absolute h-100 w-80 animate-pulse rounded-[45%] bg-violet-200/70 blur-sm dark:bg-violet-900/50'
-              />
-            )}
             {hasProfileImageError && (
               <div className='absolute z-10 flex h-80 w-80 items-center justify-center rounded-[45%] bg-violet-200/70 px-8 text-center font-mono text-xs text-violet-700 dark:bg-violet-900/50 dark:text-violet-200'>
                 {t('La ilustración no pudo cargarse')}
               </div>
             )}
             <img
-              className={`w-80 object-cover transition-opacity duration-500 ${isProfileImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className='w-80 object-cover'
               style={{
                 maskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)',
                 WebkitMaskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)'
               }}
-              src={profileImage}
+              src='/images/hero1-fast.png'
               alt='Profile'
+              width='700'
+              height='700'
               loading='eager'
               fetchPriority='high'
               decoding='async'
-              onLoad={() => setIsProfileImageLoaded(true)}
               onError={() => setHasProfileImageError(true)}
             />
           </div>
