@@ -148,7 +148,7 @@ export const ContactForm = () => {
 
       <Button
         disabled={!isCompleted || isSubmitting}
-        label={t('Ver Proyectos')}
+        label={t('Enviar mensaje')}
         variant='primary'
         icon={<Send size={16} />}
         type='submit'
