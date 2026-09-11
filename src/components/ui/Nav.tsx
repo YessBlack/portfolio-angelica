@@ -13,6 +13,7 @@ export const Nav = () => {
 
   const links = [
     { label: t('Inicio'), to: 'inicio' },
+    { label: t('Sobre mí'), to: 'sobre-mi' },
     { label: t('Experiencia'), to: 'experiencia' },
     { label: t('Proyectos'), to: 'proyectos' },
     { label: t('Contacto'), to: 'contacto' }
