@@ -30,7 +30,7 @@ export const Hero = () => {
   ]
 
   return (
-    <section id='inicio' className='col-span-full rounded-lg py-25 dark:bg-red-900/40'>
+    <section id='inicio' className='col-span-full rounded-lg py-25'>
       <motion.div
         className='flex flex-col items-center gap-5 lg:flex-row justify-between'
         initial={{ y: 24 }}

@@ -59,7 +59,7 @@ export const useExperience = () => {
       date: t('Jun 2023 — Feb 2026 | 2 años 9 meses'),
       role: t('Desarrollador Junior II'),
       company: 'Giobs SAS BIC',
-      desc: t('Modernicé una plataforma SaaS migrándola a React, optimizando procesos de desarrollo/despliegue y coordinando con clientes y QA.'),
+      desc: t('Modernicé una plataforma SaaS migrándola a React.'),
       hash: '#f2a91c',
       head: true
     },
@@ -67,14 +67,14 @@ export const useExperience = () => {
       date: t('Abr 2018 — Jul 2018 | 4 meses'),
       role: t('Auxiliar de TI'),
       company: t('Departamento Administrativo Nacional de Estadística - DANE'),
-      desc: t('Lideré el equipo de informática en el Censo Nacional de Población y Vivienda 2018, configurando y supervisando la recolección y transmisión de información.'),
+      desc: t('Lideré el equipo de informática durante la recolección y transmisión de datos del Censo Nacional 2018.'),
       hash: '#7e2b90'
     },
     {
       date: t('Feb 2017 — Ago 2017 | 7 meses'),
       role: t('Técnica informática'),
       company: t('Colegio Julio Perez Ferrero'),
-      desc: t('Realicé práctica en mantenimiento de equipos de cómputo, resolviendo problemas técnicos, elaborando informes e inventarios, y apoyando el aula TIC.'),
+      desc: t('Apoyé el aula TIC con mantenimiento y resolución de fallas en equipos.'),
       hash: '#3c8d15'
     }
   ]

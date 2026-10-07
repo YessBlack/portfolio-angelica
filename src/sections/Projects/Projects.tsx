@@ -4,7 +4,9 @@ import youtubeCloneImage from '@/assets/img/youtube-clone-optimized.jpg'
 import inventarioPosImage from '@/assets/img/inventario-pos-optimized.jpg'
 import kairos from '@/assets/img/kairos-optimized.jpg'
 import reserveOneImage from '@/assets/img/reserve-one-optimized.jpg'
+import reserveOneApiImage from '@/assets/img/reserve-one-api.png'
 import { motion } from 'framer-motion'
+import { Code2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export const Projects = () => {
@@ -35,31 +37,42 @@ export const Projects = () => {
       description: t('Kadosh es un sistema de punto de venta e inventario en desarrollo, con control de stock en tiempo real, registro de ventas y reportes.'),
       image: inventarioPosImage,
       category: t('En desarrollo'),
-      tags: ['React', 'Shadcn', 'SQLite', 'TypeScript', 'Node.js'],
+      tags: ['React', 'Shadcn', 'SQLite', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Express', 'PocketBase'],
       githubUrl: 'https://github.com/YessBlack/kadosh'
     },
     {
       title: 'Reserve One',
       description: t('Sistema de reservas para Club Lan Hua, escuela de artes marciales chinas en Medellín, cubriendo gestión de horarios, clases y usuarios.'),
       image: reserveOneImage,
-      category: t('En desarrollo'),
+      category: t('Completado'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
-      githubUrl: 'https://github.com/YessBlack/reserve-one-5'
+      githubUrl: 'https://github.com/YessBlack/reserve-one-5',
+      liveUrl: 'https://reserve-one-5-6gu6.vercel.app/src/index.html'
     },
     {
       title: 'Kairos App',
       description: t('MVP de gestión de tareas con landing page, autenticación, dashboard y perfil de usuario, permitiendo crear, organizar y eliminar tareas.'),
       image: kairos,
-      category: t('En desarrollo'),
+      category: t('Completado'),
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot'],
-      githubUrl: 'https://github.com/YessBlack/Kairos-Planner'
+      githubUrl: 'https://github.com/YessBlack/Kairos-Planner',
+      liveUrl: 'https://kairos-planner-drab.vercel.app/'
+    },
+    {
+      title: 'Reserve One API',
+      description: t('API para el sistema de reservas Reserve One, desarrollada con Java, Spring Boot, Hibernate, Supabase y desplegada en Render.'),
+      image: reserveOneApiImage,
+      category: t('Completado'),
+      tags: ['Java', 'Spring Boot', 'Hibernate', 'Supabase', 'Render'],
+      githubUrl: 'https://github.com/YessBlack/reserve-one-backend',
+      liveUrl: 'https://reserve-one-backend.onrender.com/swagger-ui/index.html'
     }
   ]
 
   return (
     <section
       id='proyectos'
-      className='col-span-full rounded-lg py-15 text-center flex flex-col gap-10 dark:bg-red-900/40'
+      className='col-span-full rounded-lg py-15 text-center flex flex-col gap-10'
     >
       <motion.div
         className='mx-auto max-w-2xl text-center flex flex-col gap-10'
@@ -86,6 +99,15 @@ export const Projects = () => {
           />
         ))}
       </motion.div>
+      <a
+        href='https://github.com/YessBlack'
+        target='_blank'
+        rel='noreferrer'
+        className='mx-auto inline-flex items-center gap-2 rounded-full border border-violet-200 px-5 py-2.5 text-sm font-medium text-violet-700 transition-colors hover:bg-violet-50 dark:border-white/10 dark:text-violet-200 dark:hover:bg-violet-500/10'
+      >
+        <Code2 size={16} />
+        <span>{t('Ver más proyectos')}</span>
+      </a>
     </section>
   )
 }

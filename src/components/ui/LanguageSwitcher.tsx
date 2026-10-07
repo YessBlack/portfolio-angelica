@@ -51,7 +51,7 @@ export const LanguageSwitcher = () => {
         aria-haspopup='listbox'
         aria-expanded={isOpen}
         aria-label='Cambiar idioma / Change language'
-        className='flex items-center gap-1.5 rounded-lg bg-white px-2.5 py-1.5 transition-colors hover:border-slate-300'
+        className='flex items-center gap-1.5 rounded-lg bg-white px-2.5 py-1.5 text-slate-700 transition-colors hover:border-slate-300 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10'
       >
         <span className={`${currentLang.flagClass} rounded-sm`} style={{ fontSize: '20px' }} />
         <ChevronDown
@@ -63,7 +63,7 @@ export const LanguageSwitcher = () => {
       {isOpen && (
         <ul
           role='listbox'
-          className='absolute right-0 top-[calc(100%+10px)] z-50 min-w-35 rounded-lg border border-slate-200 bg-white p-1 shadow-lg'
+          className='absolute right-0 top-[calc(100%+10px)] z-50 min-w-35 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-white/10 dark:bg-[#11151F] dark:shadow-black/30'
         >
           {LANGUAGES.map((lng) => (
             <li key={lng.code}>
@@ -72,10 +72,10 @@ export const LanguageSwitcher = () => {
                 role='option'
                 aria-selected={lng.code === currentLang.code}
                 onClick={() => handleSelect(lng.code)}
-                className={`flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-sm transition-colors hover:bg-slate-100 
+                className={`flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-sm transition-colors hover:bg-slate-100 dark:hover:bg-white/10
                   ${lng.code === currentLang.code
-                    ? 'bg-violet-50 text-violet-700'
-                    : 'text-slate-900'
+                    ? 'bg-violet-50 text-violet-700 dark:bg-violet-500/20 dark:text-violet-200'
+                    : 'text-slate-900 dark:text-slate-200'
                   }`}
               >
                 <span className={`${lng.flagClass} rounded-sm`} style={{ fontSize: '20px' }} />
