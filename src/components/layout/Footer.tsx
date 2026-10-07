@@ -13,13 +13,13 @@ export const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className='mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8'
+        className='mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8'
       >
-        <p className='mb-8 text-center font-mono text-xs text-slate-400 dark:text-slate-500'>
+        <p className='mb-6 text-center font-mono text-xs text-slate-400 dark:text-slate-500'>
           {t('Gracias por llegar hasta aquí')}
         </p>
 
-        <div className='flex flex-col items-center gap-6 rounded-lg px-4 py-6 dark:bg-white/5'>
+        <div className='flex flex-col items-center gap-4 rounded-lg px-4 py-4'>
           <div className='flex flex-col items-center gap-1 text-center'>
             <span className='text-xl font-bold text-slate-900 dark:text-[#E5E7EB]'>
               Angelica Garcia

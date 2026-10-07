@@ -74,7 +74,7 @@ export const Contact = () => {
                 {t('Hablemos')}
               </h2>
               <p className='leading-relaxed text-slate-600 dark:text-slate-300'>
-                {t('Estoy buscando activamente una oportunidad para seguir creciendo como desarrolladora dentro de un equipo. Me apasiona el frontend, aunque también me muevo cómoda en backend, y en ambos casos aplico buenas prácticas de principio a fin. Si mi perfil encaja con lo que buscas, ¡conversemos!')}
+                {t('Busco un equipo donde pueda aportar, seguir creciendo y construir software de calidad. ¡Conversemos!')}
               </p>
             </div>
 

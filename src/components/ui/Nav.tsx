@@ -1,5 +1,5 @@
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
-import { SocialNetwork } from '@/components/ui/SocialNetwork'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -13,7 +13,6 @@ export const Nav = () => {
 
   const links = [
     { label: t('Inicio'), to: 'inicio' },
-    { label: t('Sobre mí'), to: 'sobre-mi' },
     { label: t('Experiencia'), to: 'experiencia' },
     { label: t('Proyectos'), to: 'proyectos' },
     { label: t('Contacto'), to: 'contacto' }
@@ -38,10 +37,9 @@ export const Nav = () => {
       ))}
 
       <div className='flex items-center justify-between border-t border-violet-100 pt-4 dark:border-violet-900/40'>
-        <SocialNetwork />
         <div className='flex items-center gap-3'>
           <LanguageSwitcher />
-          {/* <ThemeSwitcher /> */}
+          <ThemeToggle />
         </div>
       </div>
     </div>
@@ -74,8 +72,8 @@ export const Nav = () => {
       </nav>
 
       <div className='hidden md:flex items-center gap-5'>
-        <SocialNetwork withoutBg />
         <LanguageSwitcher />
+        <ThemeToggle />
       </div>
 
       {isOpen && createPortal(dropdown, document.body)}

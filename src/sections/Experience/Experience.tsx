@@ -30,11 +30,8 @@ export const Experience = () => {
         viewport={{ once: false, amount: 0.15 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className='mx-auto max-w-2xl text-center flex flex-col gap-10'>
+        <div className='mx-auto max-w-2xl text-center'>
           <h2 className='font-bold text-3xl text-violet-500'>{t('Experiencia Profesional')}</h2>
-          <p className='leading-relaxed'>
-            {t('Tengo 3 años de experiencia en desarrollo web, trabajando en la creación de aplicaciones desde el frontend hasta el backend. Me gusta entender cómo funciona cada parte de un proyecto, mejorar la calidad del código y seguir aprendiendo nuevas herramientas para crear mejores soluciones.')}
-          </p>
         </div>
         <ExperienceTimeline />
       </motion.div>
