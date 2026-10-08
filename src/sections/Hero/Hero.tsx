@@ -47,7 +47,7 @@ export const Hero = () => {
 
           <div className='w-full lg:max-w-lg'>
             <h1 className='text-4xl align-baseline leading-tight font-bold sm:text-4xl lg:text-5xl'>
-              {t('Soy')} <span className='text-violet-500 italic'>Angelica García</span>,<br />
+              {t('Soy')} <span className='text-violet-500 italic'>Angélica Yessenia García Osorio</span><br />
               {t('Desarrolladora de Software')}
             </h1>
           </div>
