@@ -53,7 +53,7 @@ export const Hero = () => {
           </div>
 
           <p className='w-full lg:max-w-xl'>
-            {t('Soy Ingeniera de Sistemas y desarrolladora de software con experiencia construyendo aplicaciones web con JavaScript, TypeScript, React y Node.js. Me apasiona crear productos digitales escalables y actualmente estoy profundizando en backend, APIs y Spring Boot para consolidarme como desarrolladora fullstack.')}
+            {t('Soy Angelica Yessenia García Osorio, Ingeniera de Sistemas y desarrolladora de software con experiencia en React, Java, JavaScript, TypeScript y Node.js. Me apasiona crear productos digitales y seguir creciendo en desarrollo frontend y fullstack.')}
           </p>
           <div className='flex gap-3'>
             <ScrollLink to='proyectos' smooth={true} duration={500} offset={-80}>
